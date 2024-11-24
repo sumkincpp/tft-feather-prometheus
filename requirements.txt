@@ -1,0 +1,5 @@
+adafruit-circuitpython-httpserver
+adafruit-circuitpython-requests
+adafruit-circuitpython-display-text
+adafruit-circuitpython-bme680
+adafruit-circuitpython-scd4x

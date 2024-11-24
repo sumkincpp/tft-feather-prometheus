@@ -1,0 +1,6 @@
+adafruit_display_text
+adafruit_bitmap_font
+adafruit_bme680
+adafruit_ntp
+adafruit_httpserver
+adafruit_scd4x
