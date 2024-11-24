@@ -5,7 +5,7 @@ This is a simple [CirtcuitPython](https://circuitpython.org/) project that reads
 - Board used: Adafruit Feather ESP32-S3 TFT with ESP32S3
 - Sensors: BME680, SCD41
 
-> Note: I had not checked what happens if you don't have display. I think it should work, but I'm not sure.
+> Note: I had not checked what happens if you don't have display. I think it may work without problems.
 
 ## Features
 
@@ -14,7 +14,7 @@ This is a simple [CirtcuitPython](https://circuitpython.org/) project that reads
 - Watchdog timer: restarts after 15 seconds if freezes
 - WiFi Auto-Reconnect (supervisor is reloaded)
 - Sensor error detection
-- Prometheus metrics
+- Prometheus metrics (`<IP>/metrics`)
 - Supported sensorts: BME680 (0x77), SCD4x (0x62)
 
 TFT Display shows IP address, Temperature, Humidity and Pressure.
@@ -30,9 +30,10 @@ secrets = {
 }
 ```
 
-Create virtualenvironment and install `circup` (CircuitPython package manager)
+Create a virtual environment and install `circup` (CircuitPython package manager)
 
 > NOTE: Use [astral-sh/uv](https://github.com/astral-sh/uv) to create the virtual environment.
+> 
 > NOTE: If you don't do this, you will certainly end up messing up your system python installation.
 
 ```bash
@@ -78,7 +79,11 @@ uv pip install -r requirements.txt
 
 ## Prometheus Metrics
 
+Metrics data is available at `<IP>/metrics`
+
 ### Example of sensor data
+
+Example of metrics data
 
 ```
 sensor_temperature_celsius{sensor_type="bme680"} 26.261
@@ -118,4 +123,4 @@ Here are the links reformatted with descriptions:
 * [SCD4X Library Documentation](https://docs.circuitpython.org/projects/scd4x/en/latest/)
 * [BME680 Library Documentation](https://docs.circuitpython.org/projects/bme680/en/latest/)
 * [BME680 Library Source](https://github.com/adafruit/Adafruit_CircuitPython_BME680)
-* [Adafruit SCD-40 and SCD-41](https://learn.adafruit.com/adafruit-scd-40-and-scd-41/python-circuitpython) - tutoria
+* [Adafruit SCD-40 and SCD-41](https://learn.adafruit.com/adafruit-scd-40-and-scd-41/python-circuitpython) - tutorial
